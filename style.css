@@ -484,18 +484,10 @@ body {
     }
  }
 
+ .img-responsive {
+   width: 500px;           /* Makes the image fill the width of the container */
+   height: auto;          /* Maintains the aspect ratio */
+   max-width: 100%;       /* Ensures the image doesn't exceed the container's width */
+}
 
-
-/* Start Button (Centered in the middle of the page) */
-/* Optional Custom Styles */
-.start-button {
-   border: none;
-   cursor: pointer;
-   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
- }
- 
- .start-button:hover {
-   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
- }
- 
  
