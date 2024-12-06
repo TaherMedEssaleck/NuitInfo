@@ -1,0 +1,15 @@
+
+  
+  <div class="container mt-5 pt-5">
+    <!-- Row pour les images -->
+    <div class="row">
+      <!-- Boucle pour afficher les 5 images sous 'ocean' -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-2 mb-4" *ngFor="let index of [1, 2, 3, 4, 5]">
+        <app-image-text [imageUrl]="index" [type]="'ocean'"></app-image-text>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  
