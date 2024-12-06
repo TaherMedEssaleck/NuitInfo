@@ -33,3 +33,30 @@
         flex: 1 1 100%; /* 1 colonne sur les petits écrans */
     }
 }
+
+.human-box-container {
+    position: fixed; /* Permet de positionner la boîte par rapport à la fenêtre */
+    top: 50%; /* Place la boîte verticalement au centre */
+    left: 50%; /* Place la boîte horizontalement au centre */
+    transform: translate(-50%, -50%); /* Ajuste l'origine pour un vrai centrage */
+    z-index: 1000; /* S'assure que la boîte est devant tout le reste */
+    background-color: rgba(255, 255, 255, 0.95); /* Arrière-plan légèrement opaque */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Ajoute une ombre pour un effet flottant */
+    padding: 20px; /* Espacement interne */
+    border-radius: 10px; /* Coins arrondis */
+    width: 80%; /* Taille adaptative */
+    max-width: 400px; /* Limite la largeur maximale */
+    text-align: center; /* Centre le contenu textuel */
+}
+
+/* Désactive l'interaction avec le contenu derrière */
+.container {
+    filter: blur(5px); /* Ajoute un effet de flou au reste du contenu */
+    pointer-events: none; /* Désactive les clics sur les éléments derrière */
+}
+
+/* Assure que le reste est visible si la boîte est fermée */
+.container.active {
+    filter: none;
+    pointer-events: auto;
+}
