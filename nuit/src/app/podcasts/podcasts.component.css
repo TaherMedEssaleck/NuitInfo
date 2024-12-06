@@ -1,31 +1,21 @@
 .podcast-container {
     font-family: Arial, sans-serif;
-    margin: 20px;
   }
   
-  .podcast-list {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .podcast-list li {
-    padding: 10px;
+  .podcast-list .list-group-item {
     cursor: pointer;
-    border: 1px solid #ccc;
-    margin: 5px 0;
     transition: background-color 0.3s;
+    padding: 12px 20px;
   }
   
-  .podcast-list li:hover {
+  .podcast-list .list-group-item:hover {
     background-color: #f0f0f0;
   }
   
-  .podcast-player {
+  audio,
+  video {
     margin-top: 20px;
-  }
-  
-  audio {
     width: 100%;
-    margin-top: 10px;
+    max-height: 500px; /* Limiter la hauteur des vidéos */
   }
   
