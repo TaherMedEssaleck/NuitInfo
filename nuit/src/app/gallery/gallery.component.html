@@ -1,0 +1,54 @@
+<div class="container" [class.active]="selectedHumanIndex === null">
+    <!-- Rows pour les images "ocean" -->
+    <div class="row">
+        <div class="column" *ngFor="let index of [1, 2, 3]">
+            <app-image-text
+                [imageUrl]="index"
+                [type]="'ocean'"
+                class="full-width"
+                (click)="displayHumanBox(index)">
+            </app-image-text>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column" *ngFor="let index of [4,5,1]">
+            <app-image-text
+                [imageUrl]="index"
+                [type]="'ocean'"
+                class="full-width"
+                (click)="displayHumanBox(index)">
+            </app-image-text>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column" *ngFor="let index of [2, 3,4]">
+            <app-image-text
+                [imageUrl]="index"
+                [type]="'ocean'"
+                class="full-width"
+                (click)="displayHumanBox(index)">
+            </app-image-text>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column" *ngFor="let index of [5,1,2]">
+            <app-image-text
+                [imageUrl]="index"
+                [type]="'ocean'"
+                class="full-width"
+                (click)="displayHumanBox(index)">
+            </app-image-text>
+        </div>
+    </div>
+    <!-- Ajoutez plus de lignes ici si nécessaire -->
+</div>
+
+<!-- Box dynamique pour le type "humain" -->
+<div *ngIf="selectedHumanIndex !== null" class="human-box-container">
+    <button (click)="closeHumanBox()" class="close-btn">✖</button>
+    <app-image-text
+        [imageUrl]="selectedHumanIndex"
+        [type]="'humain'"
+        class="human-box">
+    </app-image-text>
+</div>
