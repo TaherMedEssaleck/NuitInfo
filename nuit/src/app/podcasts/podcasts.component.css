@@ -1,0 +1,31 @@
+.podcast-container {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+  
+  .podcast-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .podcast-list li {
+    padding: 10px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    margin: 5px 0;
+    transition: background-color 0.3s;
+  }
+  
+  .podcast-list li:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .podcast-player {
+    margin-top: 20px;
+  }
+  
+  audio {
+    width: 100%;
+    margin-top: 10px;
+  }
+  
