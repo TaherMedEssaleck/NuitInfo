@@ -1,65 +1,54 @@
-<div class="container">
-    <!-- Row pour les images -->
+<div class="container" [class.active]="selectedHumanIndex === null">
+    <!-- Rows pour les images "ocean" -->
     <div class="row">
         <div class="column" *ngFor="let index of [1, 2, 3]">
-            <app-image-text [imageUrl]="index" [type]="'ocean'" class="full-width"></app-image-text>
+            <app-image-text
+                [imageUrl]="index"
+                [type]="'ocean'"
+                class="full-width"
+                (click)="displayHumanBox(index)">
+            </app-image-text>
         </div>
     </div>
-
-    <!-- Une autre ligne d'images -->
     <div class="row">
-        <div class="column" *ngFor="let index of [1, 2, 3]">
-            <app-image-text [imageUrl]="index" [type]="'ocean'" class="full-width"></app-image-text>
+        <div class="column" *ngFor="let index of [4,5,1]">
+            <app-image-text
+                [imageUrl]="index"
+                [type]="'ocean'"
+                class="full-width"
+                (click)="displayHumanBox(index)">
+            </app-image-text>
         </div>
     </div>
-
-    <!-- Autres lignes -->
     <div class="row">
-        <div class="column" *ngFor="let index of [1, 2, 3]">
-            <app-image-text [imageUrl]="index" [type]="'ocean'" class="full-width"></app-image-text>
+        <div class="column" *ngFor="let index of [2, 3,4]">
+            <app-image-text
+                [imageUrl]="index"
+                [type]="'ocean'"
+                class="full-width"
+                (click)="displayHumanBox(index)">
+            </app-image-text>
         </div>
     </div>
-
     <div class="row">
-        <div class="column" *ngFor="let index of [1, 2, 3]">
-            <app-image-text [imageUrl]="index" [type]="'ocean'" class="full-width"></app-image-text>
+        <div class="column" *ngFor="let index of [5,1,2]">
+            <app-image-text
+                [imageUrl]="index"
+                [type]="'ocean'"
+                class="full-width"
+                (click)="displayHumanBox(index)">
+            </app-image-text>
         </div>
     </div>
+    <!-- Ajoutez plus de lignes ici si nécessaire -->
 </div>
 
-<!-- CSS -->
-<style>
-    .container {
-        margin-top: 50px;
-        padding-top: 50px;
-    }
-
-    .row {
-        display: flex;
-        flex-wrap: wrap;
-        margin-bottom: 10px; /* Ajoute un espace entre les lignes */
-    }
-
-    .column {
-        flex: 1 1 33.33%; /* Par défaut 3 colonnes sur grand écran */
-        box-sizing: border-box; /* Assurez-vous que les dimensions des éléments sont respectées */
-    }
-
-    /* Responsiveness */
-    @media (max-width: 768px) {
-        .column {
-            flex: 1 1 50%; /* 2 colonnes sur les écrans moyens */
-        }
-    }
-
-    @media (max-width: 480px) {
-        .column {
-            flex: 1 1 100%; /* 1 colonne sur les petits écrans */
-        }
-    }
-
-    .full-width {
-        width: 100%;
-        height: 100%; /* Assurez-vous que les boxes occupent toute la hauteur de la colonne */
-    }
-</style>
+<!-- Box dynamique pour le type "humain" -->
+<div *ngIf="selectedHumanIndex !== null" class="human-box-container">
+    <button (click)="closeHumanBox()" class="close-btn">✖</button>
+    <app-image-text
+        [imageUrl]="selectedHumanIndex"
+        [type]="'humain'"
+        class="human-box">
+    </app-image-text>
+</div>

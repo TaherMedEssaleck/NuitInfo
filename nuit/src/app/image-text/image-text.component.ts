@@ -10,21 +10,25 @@ export class ImageTextComponent {
   @Input() type: 'humain' | 'ocean' = 'humain';  // Type d'image ('humain' ou 'ocean')
 
   // Listes de textes pour les deux types
-  humainText: string[] = [
-    'Texte 1 pour Humain',
-    'Texte 2 pour Humain',
-    'Texte 3 pour Humain',
-    'Texte 4 pour Humain',
-    'Texte 5 pour Humain'
-  ];
+  // Définitions pour les relations humaines avec les composants marins
+ humainText: string[] = [
+  'The heart pumps blood throughout the body, just like ocean currents distribute heat, oxygen, and nutrients across the globe.',
+  'The liver detoxifies and processes substances in the body, analogous to the ocean struggling to filter and cope with plastic pollution.',
+  'The intestines host beneficial bacteria that process nutrients, akin to marine ecosystems hosting biodiversity to sustain ocean life.',
+  'The kidneys filter toxins from the blood, maintaining balance in the body, much like coral reefs filter and protect marine ecosystems.',
+  'The lungs perform gas exchange, supplying oxygen to the body and removing carbon dioxide, similar to phytoplankton producing oxygen in the ocean.',
+];
 
-  oceanText: string[] = [
-    'Texte 1 pour Océan',
-    'Texte 2 pour Océan',
-    'Texte 3 pour Océan',
-    'Texte 4 pour Océan',
-    'Texte 5 pour Océan'
-  ];
+// Définitions des composants océaniques
+ oceanText: string[] = [
+  'Ocean currents move water across the planet, distributing heat, oxygen, and nutrients vital to marine life.',
+  'Plastic pollution refers to the accumulation of plastic waste in oceans, harming marine organisms and ecosystems.',
+  'Marine ecosystems are complex networks of organisms that sustain biodiversity and regulate life cycles in the ocean.',
+  'Coral reefs act as natural filters for the ocean, providing habitats and supporting marine biodiversity.',
+  'Phytoplankton are tiny plants in the ocean that perform photosynthesis, producing oxygen and absorbing carbon dioxide.',
+];
+
+
 
   // Méthode pour générer le chemin de l'image en fonction du type et de l'index
   getImagePath(): string {
