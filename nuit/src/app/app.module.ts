@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { ImageTextComponent } from './image-text/image-text.component';
 import { PodcastsComponent } from './podcasts/podcasts.component';
 import { HomeComponent } from './home/home.component';
+import { GalleryComponent } from './gallery/gallery.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ImageTextComponent,
     PodcastsComponent,
-    HomeComponent
+    HomeComponent,
+    GalleryComponent
 
 
   ],
