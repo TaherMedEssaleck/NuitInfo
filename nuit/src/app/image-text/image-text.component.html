@@ -1,8 +1,61 @@
 <div class="container text-center">
-    <div class="row justify-content-center">
-        <div class="col-12 col-md-6">
-            <img [src]="getImagePath()" alt="Image" class="img-fluid rounded">
-            <p class="mt-3">{{ getText() }}</p>
+    <div class="row justify-content-center g-0">
+        <div class="col-12 col-md-6 col-lg-4 p-0">
+            <div class="image-text-box">
+                <!-- Image -->
+                <img [src]="getImagePath()" alt="Image" class="img-fluid rounded fixed-image">
+        
+                <!-- Séparateur -->
+        
+                <!-- Texte -->
+                <p class="mt-3 fixed-text">{{ getText() }}</p>
+            </div>
         </div>
     </div>
 </div>
+
+<!-- CSS -->
+<style>
+    .container {
+        margin-top: 50px;
+    }
+
+    .image-text-box {
+        width: 100%;  /* L'élément occupe toute la largeur de la colonne */
+        height: auto; /* Laissez la hauteur s'ajuster automatiquement selon le contenu */
+    }
+
+    /* Sur les grands écrans, chaque box prendra un tiers de la largeur */
+    .col-lg-4 {
+        width: 33.33%; /* Fixe la largeur à 33% sur les grands écrans */
+        padding: 0;  /* Enlever tout padding */
+    }
+
+    /* Sur les écrans moyens, chaque box prendra la moitié de la largeur */
+    .col-md-6 {
+        width: 50%; /* Fixe la largeur à 50% sur les écrans moyens */
+        padding: 0;  /* Enlever tout padding */
+    }
+
+    /* Sur les petits écrans, chaque box prendra 100% de la largeur */
+    .col-12 {
+        width: 100%; /* Fixe la largeur à 100% sur les petits écrans */
+        padding: 0;  /* Enlever tout padding */
+    }
+
+    /* Fixer la taille de l'image */
+    .fixed-image {
+        width: 100%; /* L'image prend 100% de la largeur de son conteneur */
+        max-width: 300px; /* Limite la largeur de l'image à 300px */
+        height: 200px; /* Fixe la hauteur de l'image à 200px */
+        object-fit: cover; /* L'image remplira le conteneur sans déformer ses proportions */
+    }
+
+    /* Fixer la taille du texte */
+    .fixed-text {
+        font-size: 18px; /* Taille de la police fixe */
+        line-height: 1.4; /* Hauteur de ligne pour le texte */
+        color: #333; /* Couleur du texte */
+        margin-top: 10px; /* Espacement entre l'image et le texte */
+    }
+</style>
